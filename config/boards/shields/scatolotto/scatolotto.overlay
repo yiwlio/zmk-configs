@@ -42,16 +42,16 @@
   encoder0: encoder {
     compatible = "alps,ec11";
     /* label = "ENCODER"; */
-    a-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_LOW)>;
-    b-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_LOW)>;
-    steps = <120>;
+    a-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH)>;
+    steps = <30>;
     /* resolution = <2>; */
     status = "disabled";
   };
 
   sensors {
     compatible = "zmk,keymap-sensors";
-    triggers-per-rotation = <30>;
+    triggers-per-rotation = <15>;
     sensors = <&encoder0>;
   };
 };
