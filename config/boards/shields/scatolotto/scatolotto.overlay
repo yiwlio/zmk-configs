@@ -44,12 +44,14 @@
     label = "ENCODER";
     a-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    resolution = <2>;
+    steps = <90>;
+    /* resolution = <2>; */
     status = "disabled";
   };
 
   sensors {
     compatible = "zmk,keymap-sensors";
+    triggers-per-rotation = <30>;
     sensors = <&encoder0>;
   };
 };
