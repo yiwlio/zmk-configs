@@ -28,7 +28,9 @@
      */
 
     default_layer {
-      bindings = <>;
+      bindings = < 
+        &kp Q 
+      >;
 
       sensor-bindings = <
         &inc_dec_kp C_VOL_UP C_VOL_DN
