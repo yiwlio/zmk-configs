@@ -1,0 +1,21 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+  encoder0: encoder {
+    compatible = "alps,ec11";
+    label = "ENCODER";
+    a-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    resolution = <2>;
+    status = "disabled";
+  };
+
+  sensors {
+    compatible = "zmk,keymap-sensors";
+    sensors = <&encoder0>;
+  };
+};
+
+&encoder0 {
+  status = "okay";
+};
