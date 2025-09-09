@@ -41,10 +41,10 @@
 
   encoder0: encoder {
     compatible = "alps,ec11";
-    label = "ENCODER";
-    a-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH)>;
-    b-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH)>;
-    steps = <120>;
+    /* label = "ENCODER"; */
+    a-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH)>;
+    steps = <15>;
     /* resolution = <2>; */
     status = "disabled";
   };
