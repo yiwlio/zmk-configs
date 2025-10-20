@@ -40,8 +40,6 @@
     };
 
   encoder0: encoder {
-    compatible = "alps,ec11";
-    /* label = "ENCODER"; */
     a-gpios = <&pro_micro_d 15 (GPIO_ACTIVE_LOW | GPIO_PULL_DOWN)>;
     b-gpios = <&pro_micro_d 14 (GPIO_ACTIVE_LOW | GPIO_PULL_DOWN)>;
     steps = <60>;
