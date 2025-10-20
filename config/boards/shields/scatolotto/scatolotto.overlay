@@ -39,7 +39,7 @@
         >;
     };
   
-  k&pinctrl {
+  &pinctrl {
       qdec_default: qdec_default {
           group1 {
               psels = <NRF_PSEL(QDEC_A, 1, 3)>,
