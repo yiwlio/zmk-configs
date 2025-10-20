@@ -49,14 +49,6 @@
       };
   };
 
-  //encoder0: encoder {
-    //compatible = "alps,ec11";
-    //a-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH)>;
-    //b-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH)>;
-    //steps = <96>;
-    //status = "okay";
-  //};
-
   encoder: &qdec0 {
       status = "okay";
       led-pre = <0>;
@@ -67,7 +59,6 @@
 
   sensors {
     compatible = "zmk,keymap-sensors";
-    //sensors = <&encoder0>;
     sensors = <&encoder>;
     triggers-per-rotation = <24>;
   };
