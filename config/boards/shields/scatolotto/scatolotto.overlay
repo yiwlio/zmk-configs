@@ -48,18 +48,18 @@
           };
       };
   };
-
-  encoder: &qdec0 {
-      status = "okay";
-      led-pre = <0>;
-      steps = <96>;
-      pinctrl-0 = <&qdec_default>;
-      pinctrl-names = "default";
+  encoder0: encoder {
+    compatible = "alps,ec11";
+    a-gpios = <&pro_micro_d 3 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&pro_micro_d 2 (GPIO_ACTIVE_HIGH)>;
+    steps = <96>;
+    status = "okay";
+    resolution = <1>;
   };
 
   sensors {
     compatible = "zmk,keymap-sensors";
-    sensors = <&encoder>;
+    sensors = <&encoder0>;
     triggers-per-rotation = <24>;
   };
 };
