@@ -19,7 +19,7 @@
             ;
 
         row-gpios
-            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
@@ -41,8 +41,8 @@
   
   encoder0: encoder {
     compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 5 (GPIO_ACTIVE_HIGH)>;
-    b-gpios = <&pro_micro_d 4 (GPIO_ACTIVE_HIGH)>;
+    a-gpios = <&pro_micro_d 18 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_HIGH)>;
     steps = <72>;
     status = "okay";
     resolution = <1>;
