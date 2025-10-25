@@ -41,8 +41,8 @@
   
   encoder0: encoder {
     compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    a-gpios = <&pro_micro_d 18 (GPIO_ACTIVE_LOW)>;
+    b-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW)>;
     steps = <96>;
     status = "okay";
     resolution = <1>;
