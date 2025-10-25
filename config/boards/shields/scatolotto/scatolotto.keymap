@@ -35,7 +35,7 @@
       >;
 
       sensor-bindings = <
-        &inc_dec_kp LC(PLUS) LC(MINUS)
+        &inc_dec_kp LA(F13) LA(F14)
       >;
     }; 
     
