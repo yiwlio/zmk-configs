@@ -47,7 +47,7 @@
     resolution = <1>;
   };
 
-  encoder1: encoder {
+  encoder1: encoder_right {
     compatible = "alps,ec11";
     a-gpios = <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
