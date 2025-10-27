@@ -47,9 +47,23 @@
     resolution = <1>;
   };
 
+  encoder1: encoder {
+    compatible = "alps,ec11";
+    a-gpios = <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <80>;
+    status = "okay";
+    resolution = <1>;
+  };
+
   sensors {
     compatible = "zmk,keymap-sensors";
-    sensors = <&encoder0>;
-    triggers-per-rotation = <24>;
+    sensors = <&encoder0 &encoder1>;
+    first_encoder {
+        triggers-per-rotation = <24>;
+    };
+    second_encoder {
+        triggers-per-rotation = <20>;
+    };
   };
 };
