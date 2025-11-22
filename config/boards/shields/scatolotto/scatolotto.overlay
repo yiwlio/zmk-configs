@@ -12,15 +12,14 @@
         wakeup-source;
 
         input-gpios
-        = <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        = <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
         , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
         ;
   };
   
@@ -38,32 +37,44 @@
         >;
     };
   
-  encoder0: encoder {
+  encoder0: encoder_ec24 {
     compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    a-gpios = <&pro_micro_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <80>;
+    status = "okay";
+    resolution = <1>;
+  };
+
+  encoder1: encoder_wheel_vertical {
+    compatible = "alps,ec11";
+    a-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     steps = <96>;
     status = "okay";
     resolution = <1>;
   };
 
-  encoder1: encoder_right {
+  encoder2: encoder_wheel_horizontal {
     compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <80>;
+    a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <96>;
     status = "okay";
     resolution = <1>;
   };
 
   sensors {
     compatible = "zmk,keymap-sensors";
-    sensors = <&encoder0 &encoder1>;
+    sensors = <&encoder0 &encoder1 &encoder2>;
     first_encoder {
-        triggers-per-rotation = <24>;
+        triggers-per-rotation = <20>;
     };
     second_encoder {
-        triggers-per-rotation = <20>;
+        triggers-per-rotation = <24>;
+    };
+    third_encoder {
+        triggers-per-rotation = <24>;
     };
   };
 };
