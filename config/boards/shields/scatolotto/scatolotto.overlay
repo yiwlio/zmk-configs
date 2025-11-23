@@ -50,7 +50,7 @@
     compatible = "alps,ec11";
     a-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro_d 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <96>;
+    steps = <24>;
     status = "okay";
     resolution = <1>;
   };
@@ -59,7 +59,7 @@
     compatible = "alps,ec11";
     a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <96>;
+    steps = <24>;
     status = "okay";
     resolution = <1>;
   };
@@ -71,10 +71,10 @@
         triggers-per-rotation = <10>;
     };
     second_encoder {
-        triggers-per-rotation = <24>;
+        triggers-per-rotation = <12>;
     };
     third_encoder {
-        triggers-per-rotation = <24>;
+        triggers-per-rotation = <12>;
     };
   };
 };
