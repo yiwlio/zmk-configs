@@ -80,7 +80,7 @@
   encoder0: encoder_ec25 {
     compatible = "alps,ec11";
     a-gpios = <&pro_micro_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     steps = <20>;
     status = "okay";
     resolution = <1>;
