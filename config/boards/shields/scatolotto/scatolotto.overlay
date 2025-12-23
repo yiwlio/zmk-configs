@@ -35,16 +35,16 @@
             , <&pro_micro 8 GPIO_ACTIVE_LOW>
             ;
         row-gpios
-            = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>
+            = <&pro_micro 3 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
             ;
 
   };
     
   default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        columns = <9>;
-        rows = <1>;
+        columns = <2>;
+        rows = <2>;
         map = <
         //   Key 1 | Key 2 | Key 3
             RC(0,0) RC(0,1) RC(0,2)
@@ -77,44 +77,44 @@
         ;
   };
 
-  encoder0: encoder_ec25 {
-    compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <20>;
-    status = "okay";
-    resolution = <1>;
-  };
-
-  encoder1: encoder_wheel_vertical {
-    compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <24>;
-    status = "okay";
-    resolution = <1>;
-  };
-
-  encoder2: encoder_wheel_horizontal {
-    compatible = "alps,ec11";
-    a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <24>;
-    status = "okay";
-    resolution = <1>;
-  };
-
-  sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&encoder0 &encoder1 &encoder2>;
-    first_encoder {
-        triggers-per-rotation = <10>;
-    };
-    second_encoder {
-        triggers-per-rotation = <12>;
-    };
-    third_encoder {
-        triggers-per-rotation = <12>;
-    };
-  };
-};
+/*   encoder0: encoder_ec25 { */
+/*     compatible = "alps,ec11"; */
+/*     a-gpios = <&pro_micro_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     b-gpios = <&pro_micro_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     steps = <20>; */
+/*     status = "okay"; */
+/*     resolution = <1>; */
+/*   }; */
+/**/
+/*   encoder1: encoder_wheel_vertical { */
+/*     compatible = "alps,ec11"; */
+/*     a-gpios = <&pro_micro_d 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     b-gpios = <&pro_micro_d 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     steps = <24>; */
+/*     status = "okay"; */
+/*     resolution = <1>; */
+/*   }; */
+/**/
+/*   encoder2: encoder_wheel_horizontal { */
+/*     compatible = "alps,ec11"; */
+/*     a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     b-gpios = <&pro_micro_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/*     steps = <24>; */
+/*     status = "okay"; */
+/*     resolution = <1>; */
+/*   }; */
+/**/
+/*   sensors { */
+/*     compatible = "zmk,keymap-sensors"; */
+/*     sensors = <&encoder0 &encoder1 &encoder2>; */
+/*     first_encoder { */
+/*         triggers-per-rotation = <10>; */
+/*     }; */
+/*     second_encoder { */
+/*         triggers-per-rotation = <12>; */
+/*     }; */
+/*     third_encoder { */
+/*         triggers-per-rotation = <12>; */
+/*     }; */
+/*   }; */
+/* }; */
